@@ -2,7 +2,8 @@
 
 entire package is:
 ```ts
-const promise_then_catch = <T>(e: Promise<T> | (() => Promise<T>)) =>
+type AsyncArgs<T> = Promise<T> | (() => Promise<T>);
+const promise_then_catch = <T>(args: AsyncArgs<T>) =>
   (typeof e === 'function' ? e() : e).catch((err) => console.log(err)) && null;
 ```
 
@@ -12,11 +13,13 @@ For e.g., situations like invoking an async application (see below), or not awai
 
 ```ts
 
-async function main_thing() {
+async function main_thing(...args: any[]) {
   console.log("does something");
 }
 
 if (require.main === module) {
   promise_then_catch(main_thing);
+  // OR 
+  promise_then_catch(main_thing("some arg"));
 }
 ```
