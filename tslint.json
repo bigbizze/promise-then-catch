@@ -6,17 +6,12 @@
     "readonly-keyword": false,
     "readonly-array": false,
     "no-let": false,
-    "no-array-mutation": true,
     "no-object-mutation": false,
     "no-this": false,
     "no-class": false,
     "no-mixed-interface": false,
     "no-expression-statement": false,
     "import/first": false,
-    "member-ordering": [
-      true
-      //      "variables-before-functions"
-    ],
     "no-any": false,
     "no-inferrable-types": [
       false
@@ -69,7 +64,6 @@
       true,
       "allow-fast-null-checks"
     ],
-    "no-use-before-declare": true,
     "radix": true,
     "switch-default": true,
     "triple-equals": [
